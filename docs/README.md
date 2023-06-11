@@ -2,6 +2,7 @@
 
 # Models
 Artists
+
 Paintings
 
 # API
