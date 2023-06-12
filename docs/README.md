@@ -2,10 +2,8 @@
 
 The goal of this project is to create an online art store that specializes in selling paintings. The project aims to provide a superior user experience and features compared to the existing website "www.micadoni.com". By leveraging Django, a powerful web framework, the project aims to deliver a robust and user-friendly platform for art enthusiasts to explore, purchase, and appreciate artworks.
 
-# Models
+# Chapters
 
-[label](models.md)
+[Models](models.md)
 
-# API
-
-[label](api.md)
+[Api's](api.md)
