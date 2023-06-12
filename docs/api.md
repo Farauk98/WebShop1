@@ -1,0 +1,3 @@
+# Artists API (API Art Institute of Chicago: https://api.artic.edu/)
+
+The ArtistsView sample view allows for the registration and update of objects of the Artists class based on data from an external API. This view utilizes the Art Institute of Chicago API (https://api.artic.edu/api/v1/) to fetch information about artists. After retrieving the data, the view creates new Artists objects or updates existing objects based on the received information.

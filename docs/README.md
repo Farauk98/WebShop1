@@ -1,10 +1,9 @@
 # WebShop1
 
 # Models
-Artists
 
-Paintings
+[label](models.md)
 
 # API
 
-* API Art Institute of Chicago: https://api.artic.edu/
+[label](api.md)
