@@ -10,14 +10,10 @@
 
 ## Painting:
 
-* title (CharField): the title of the painting, with a maximum of 200 characters.
-
-* width (FloatField): the width of the painting.
-
-* height (FloatField): the height of the painting.
-
-* depth (FloatField): the depth of the painting.
-
-* artist_id (ForeignKey): a foreign key to the Artists model, representing the * 
-
-* artist responsible for painting the artwork.
+| Attribute | Type | Description |
+| -------- | -------- | -------- |
+| title   | CharField   | The title of the painting.   |
+| width   | FloatField   | The width of the painting (default: 0).  |
+| height   | FloatField   | The height of the painting (default: 0).  |
+| depth   | FloatField   | The depth of the painting (default: 0).  |
+| artist_id   | ForeignKey   | The ID of the associated artist (nullable).  |
