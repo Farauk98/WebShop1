@@ -10,4 +10,4 @@ class Painting(models.Model):
     width = models.FloatField(0)
     height = models.FloatField(0)
     depth = models.FloatField(0)
-    artist_id = models.ForeignKey(Artists)
+    artist_id = models.ForeignKey(Artists, on_delete=models.CASCADE)
