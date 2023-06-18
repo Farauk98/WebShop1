@@ -2,11 +2,11 @@
 
 ## Artists:
 
-* title (CharField): the title of the artist, with a maximum of 200 characters.
-
-* birth_date (DateField): the artist's birth date.
-
-* death_date (DateField): the artist's death date.
+| Attribute | Type | Description |
+| -------- | -------- | -------- |
+| title   | CharField   | The title of the artist.   |
+| birth_date   | IntegerField   | The birth date of the artist (default: 0, nullable).  |
+| death_date   | IntegerField   | The death date of the artist (default: 0, nullable).  |
 
 ## Painting:
 
