@@ -8,6 +8,10 @@
 | birth_date   | IntegerField   | The birth date of the artist (default: 0, nullable).  |
 | death_date   | IntegerField   | The death date of the artist (default: 0, nullable).  |
 
+Methods:
+
+- `__str__(self) -> str`: This method returns a string representation of the artist's title.
+
 ## Painting:
 
 | Attribute | Type | Description |
@@ -17,3 +21,7 @@
 | height   | FloatField   | The height of the painting (default: 0).  |
 | depth   | FloatField   | The depth of the painting (default: 0).  |
 | artist_id   | ForeignKey   | The ID of the associated artist (nullable).  |
+
+Methods:
+
+- `__str__(self) -> str`: This method returns a string representation of the painting's title.
