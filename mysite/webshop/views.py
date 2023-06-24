@@ -2,7 +2,8 @@ import requests
 from django.http import HttpResponse
 from django.views import View
 from .models import Artists, Painting
-
+from .forms import PaintingsForm, ArtistsForm
+from django.shortcuts import render
 
 def index(request):
     return HttpResponse("Hello, world. You're at the webshop index.")
@@ -30,6 +31,28 @@ class ArtistsView(View):
 
         return HttpResponse("Obiekty Artists zostały zaktualizowane.")
     
+class ArtistsCreateView(View):   
+    def get(self, request):
+        form = ArtistsForm()
+        context = {
+            'form': form,
+        }
+        return render(request, "form.html", context)
+
+    def post(self, request):
+        form = ArtistsForm(request.POST)
+        if form.is_valid():
+            object = form.save(commit=False)
+            object.save()
+            return HttpResponse("Obiekty Artists zostały dodane.")
+        context = {
+            'form': form,
+        }
+        return render(request, "form.html", context)
+
+
+
+    
 class PaintingsView(View):
     def get(self, request):
         api_url = "https://api.artic.edu/api/v1/artworks"
@@ -52,3 +75,22 @@ class PaintingsView(View):
             artist.save()
 
         return HttpResponse("Obiekty Artworks zostały zaktualizowane.")
+
+class PaintingsCreateView(View):   
+    def get(self, request):
+        form = PaintingsForm()
+        context = {
+            'form': form,
+        }
+        return render(request, "form.html", context)
+
+    def post(self, request):
+        form = PaintingsForm(request.POST)
+        if form.is_valid():
+            object = form.save(commit=False)
+            object.save()
+            return HttpResponse("Obiekty Paintings zostały dodane.")
+        context = {
+            'form': form,
+        }
+        return render(request, "form.html", context)
