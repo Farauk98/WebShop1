@@ -4,7 +4,10 @@ The goal of this project is to create an online art store that specializes in se
 
 # Requirements
 
-[Models](requirements.txt)
+Package Requirements: The project dependencies are defined in the requirements.txt file. To install the required packages, run the command: 
+```shell
+pip install -r requirements.txt.
+```
 
 # Chapters
 
