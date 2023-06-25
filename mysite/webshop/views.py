@@ -1,7 +1,7 @@
 import requests
 from django.http import HttpResponse
 from django.views import View
-from .models import Artists, Painting
+from .models import Artist, Painting
 from .forms import PaintingsForm, ArtistsForm
 from django.shortcuts import render, redirect, get_object_or_404
 
@@ -23,7 +23,7 @@ class ArtistsView(View):
             print(birth_date)
             print(death_date)
 
-            artist, created = Artists.objects.get_or_create(title=title)
+            artist, created = Artist.objects.get_or_create(title=title)
 
             artist.birth_date = birth_date
             artist.death_date = death_date
@@ -52,7 +52,7 @@ class ArtistsCreateView(View):
     
 class ArtistSelectView(View):
     def get(self, request):
-        artists = Artists.objects.all()
+        artists = Artist.objects.all()
         context = {
             'objects': artists,
             'object_type': 'artists'
@@ -129,7 +129,7 @@ class ObjectDeleteView(View):
         if object_type =='paintings':
             object = get_object_or_404(Painting, id=object_id)
         elif object_type =='artists':
-            object = get_object_or_404(Artists, id=object_id)
+            object = get_object_or_404(Artist, id=object_id)
         object.delete()
         return HttpResponse(f"Obiekt {object_type.capitalize()} został usunięty.")
         

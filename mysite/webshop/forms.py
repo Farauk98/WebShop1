@@ -1,8 +1,8 @@
 from django import forms
-from .models import Painting, Artists
+from .models import Painting, Artist
 
 class PaintingsForm(forms.ModelForm):
-    artist = forms.ModelChoiceField(queryset=Artists.objects.all(), label='Artysta')
+    artist = forms.ModelChoiceField(queryset=Artist.objects.all(), label='Artysta')
 
     class Meta:
         model = Painting
@@ -12,5 +12,5 @@ class PaintingsForm(forms.ModelForm):
 class ArtistsForm(forms.ModelForm):
 
     class Meta:
-        model = Artists
+        model = Artist
         fields = ['title', 'birth_date', 'death_date']
