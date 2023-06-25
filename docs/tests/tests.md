@@ -1,6 +1,6 @@
 # Unit Tests
 
-* [Unit tests for Models](tests/testsModels.md)
+* [Unit tests for Models](testsModels.md)
 
 TO DO
 
