@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wybierz obiekt</title>
+</head>
+<body>
+    <h1>Wybierz obiekt do usunięcia</h1>
+    <form method="POST" {% if object_id %}action="{% url 'delete-object' object_type=object_type object_id=object_id %}"{% endif %}>
+        {% csrf_token %}
+        <label for="object_id">Wybierz {{ object_type }}:</label>
+        <select id="object_id" name="object_id">
+            {% for object in objects %}
+            <option value="{{ object.id }}">{{ object }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

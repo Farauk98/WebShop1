@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.views import View
 from .models import Artists, Painting
 from .forms import PaintingsForm, ArtistsForm
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 
 def index(request):
     return HttpResponse("Hello, world. You're at the webshop index.")
@@ -49,9 +49,22 @@ class ArtistsCreateView(View):
             'form': form,
         }
         return render(request, "form.html", context)
+    
+class ArtistSelectView(View):
+    def get(self, request):
+        artists = Artists.objects.all()
+        context = {
+            'objects': artists,
+            'object_type': 'artists'
+        }
+        return render(request, 'select.html', context)
 
-
-
+    def post(self, request):
+        artist_id = request.POST.get('object_id')
+        if artist_id:
+            return redirect('delete-object', object_type='artists', object_id=artist_id)
+        else:
+            return HttpResponse("Nie wybrano żadnego artysty.")
     
 class PaintingsView(View):
     def get(self, request):
@@ -94,3 +107,30 @@ class PaintingsCreateView(View):
             'form': form,
         }
         return render(request, "form.html", context)
+
+class PaintingSelectView(View):
+    def get(self, request):
+        paintings = Painting.objects.all()
+        context = {
+            'objects': paintings,
+            'object_type': 'paintings'
+        }
+        return render(request, 'select.html', context)
+
+    def post(self, request):
+        painting_id = request.POST.get('object_id')
+        if painting_id:
+            return redirect('delete-object', object_type='paintings', object_id=painting_id)
+        else:
+            return HttpResponse("Nie wybrano żadnego obrazu.")
+
+class ObjectDeleteView(View):
+    def get(self, request,object_type, object_id):
+        if object_type =='paintings':
+            object = get_object_or_404(Painting, id=object_id)
+        elif object_type =='artists':
+            object = get_object_or_404(Artists, id=object_id)
+        object.delete()
+        return HttpResponse(f"Obiekt {object_type.capitalize()} został usunięty.")
+        
+        
