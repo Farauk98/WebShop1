@@ -15,20 +15,26 @@ git clone https://github.com/Farauk98/WebShop1.git
 2. Navigate to the project directory:
 
 ```shell
-cd project_name
+cd WebShop1
 ```
 
 3. Install the dependencies (optional)
 
 * [Requirements](README.md#requirements)
 
-4. Run the database migrations:
+4. Navigate to the project directory:
+
+```shell
+cd mysite
+```
+
+6. Run the database migrations:
 
 ```shell
 python manage.py migrate
 ```
 
-5. Start the development server:
+7. Start the development server:
 
 ```shell
 python manage.py runserver
