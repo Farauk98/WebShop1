@@ -9,3 +9,5 @@ The goal of this project is to create an online art store that specializes in se
 [Views](views.md)
 
 [Api's](api.md)
+
+[Unit tests](tests/tests.md)
