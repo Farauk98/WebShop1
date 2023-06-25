@@ -20,7 +20,7 @@ cd project_name
 
 3. Install the dependencies (optional)
 
-* [Requirements](readme.md#Requirements)
+* [Requirements](README.md#requirements)
 
 4. Run the database migrations:
 
@@ -38,7 +38,7 @@ Open a web browser and go to:
 http://localhost:8000/
 ```
 
-# Requirements
+## Requirements
 
 Before running the project, make sure you have the following installed:
 
