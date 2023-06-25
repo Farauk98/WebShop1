@@ -2,9 +2,48 @@
 
 The goal of this project is to create an online art store that specializes in selling paintings. The project aims to provide a superior user experience and features compared to the existing website "www.micadoni.com". By leveraging Django, a powerful web framework, the project aims to deliver a robust and user-friendly platform for art enthusiasts to explore, purchase, and appreciate artworks.
 
+# Starting the project
+
+## Instructions
+
+1. Clone the repository
+
+```shell
+git clone https://github.com/Farauk98/WebShop1.git
+```
+
+2. Navigate to the project directory:
+
+```shell
+cd project_name
+```
+
+3. Install the dependencies (optional)
+
+* [Requirements](readme.md#Requirements)
+
+4. Run the database migrations:
+
+```shell
+python manage.py migrate
+```
+
+5. Start the development server:
+
+```shell
+python manage.py runserver
+```
+Open a web browser and go to:
+```shell
+http://localhost:8000/
+```
+
 # Requirements
 
+Before running the project, make sure you have the following installed:
+
 Package Requirements: The project dependencies are defined in the requirements.txt file. To install the required packages, run the command: 
+
 ```shell
 pip install -r requirements.txt.
 ```
